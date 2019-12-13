@@ -1,5 +1,9 @@
 <div class="stockbx">
     <h3 class="stockName">Stock Name: {{ Stock.name }}</h3>
-    <p class="percentage stocktxt">Percent of Change {{ Stock.percentage }}%</p>
-    <p class="stockPrice stocktxt">Current Value ${{ Stock.value }}</p>
+    <div class="infoWrap">
+        <p class="stocksymbol stocktxt">Stock Symbol: {{ Stock.symbol }}</p>
+        <p class="percentage stocktxt">Percent of Change: {{ Stock.percentage }}%</p>
+        <p class="stockPrice stocktxt">Current Value: ${{ Stock.value }}</p>
+    </div>
+    <stocksbtns></stocksbtns>
 </div>

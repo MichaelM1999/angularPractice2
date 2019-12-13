@@ -8,6 +8,8 @@ h1 {
 }
 .stockbx {
     background-color: lightslategray;
+    padding-bottom: 1px;
+    height: fit-content;
 }
 .stocktxt {
     padding: 3px;
@@ -20,3 +22,37 @@ h1 {
     font-family: sans-serif;
     margin-left: 25px;
 }
+.stocktxt {
+    padding-bottom: 5px;
+    margin-left: 10%;
+    color: white;
+}
+.infoWrap {
+    background-color: cadetblue;
+    margin-left: 20px;
+    width: 30%;
+    padding: 1px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+.btnBar {
+    background-color: transparent;
+    width: 30%;
+    margin-left: 20px;
+    position: relative;
+    left: 40%;
+    top: -120px;
+    height: 40px;
+    border-radius: 5px;
+}
+.optbutton {
+    background-color: cadetblue;
+    color: white;
+    width: 50%;
+    height: 100%;
+    border-radius: 5px;
+    margin: 5px;
+}
+button:focus {outline:0;}

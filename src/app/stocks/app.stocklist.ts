@@ -7,26 +7,30 @@ import { Component } from '@angular/core'
 export class StockListComponent{
     Stocks = [{
         id: 1,
-        name: "CEI",
+        symbol: "CEI",
         percentage: "10",
-        value: "12.67"
+        value: "12.67",
+        name: "Chamber Energy Exchange"
     },
     {
         id: 2,
-        name: "GOOG",
+        symbol: "GOOG",
         percentage: "12",
-        value: "1032.23"
+        value: "1032.23",
+        name: "Google"
     },
     {
         id: 1,
-        name: "T",
+        symbol: "T",
         percentage: "15.3",
-        value: "234.56"
+        value: "234.56",
+        name: "Tesla"
     },
     {
         id: 1,
-        name: "S",
+        symbol: "S",
         percentage: "-5",
-        value: "23.53"
+        value: "23.53",
+        name: "Sprint"
     },]
 }
