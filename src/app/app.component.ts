@@ -3,7 +3,9 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: '<stocks-list></stocks-list>',
+  template: `
+  <router-outlet></router-outlet>
+  `,
 })
 export class AppComponent {
   title = 'ng-firstapp';
