@@ -1,5 +1,12 @@
 <div>
     <h1>{{ stock?.name }}</h1>
-    <h3>{{ stock?.symbol}}</h3>
-    <h3>{{stock?.value}}</h3>
+    <div class="infoBox">
+        <p class="stocktxt">New York Stock Exchange Symbol: {{stock?.symbol}}</p>
+        <p class="stocktxt">Current Value: {{stock?.value}}</p>
+        <p class="stocktxt">Percentage Change in Value: %{{stock?.percentage}}</p>
+        <p class="stocktxt">Avalable Shares: {{stock?.volume}}</p>
+    </div>
+    <div class="graphBox">
+        <h1>Graph Box</h1>
+    </div>
 </div>

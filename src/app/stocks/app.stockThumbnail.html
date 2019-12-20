@@ -6,7 +6,7 @@
         <p class="stockPrice stocktxt">Current Value: ${{ Stock.value }}</p>
     </div>
     <div class="btnBar">
-            <button class="optbutton" value="Add">Add</button>
-            <button class="optbutton" value="Delete">Delete</button>
+            <button class="optbutton" value="Add" [routerLink]="['/stocks', Stock.id]">View</button>
+            <button class="optbutton" value="Delete">Buy</button>
         </div>
 </div>
