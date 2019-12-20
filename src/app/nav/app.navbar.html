@@ -1,6 +1,6 @@
 <div class="topnav">
-        <a routerLink="active" href="#home">Home</a>
-        <a [routerLink]="['/stocks']" routerLink="active">Watchlist</a>
-        <a href="#contact">Contact</a>
-        <a href="#about">About</a>
+        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
+        <a [routerLink]="['/stocks']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Watchlist</a>
+        <a routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Contact</a>
+        <a [routerLink]="['/about']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">About</a>
       </div>

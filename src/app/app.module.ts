@@ -10,7 +10,8 @@ import { appRoutes } from './routes'
 import { Router, RouterModule } from '@angular/router';
 import { Navbar } from './nav/app.navbar';
 import { Error404Component } from './errors/app.404component';
-import { StockRouteActivator } from './stock-details/stock-details.activator.service'
+import { StockRouteActivator } from './stock-details/stock-details.activator.service';
+import { AboutPage } from './about/app.about-component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { StockRouteActivator } from './stock-details/stock-details.activator.ser
     StockDetailsComponent,
     Navbar,
     Error404Component,
-
+    AboutPage,
+    
   ],
   imports: [
     BrowserModule,
