@@ -56,6 +56,7 @@ h1 {
     margin: 5px;
 }
 button:focus {outline:0;}
+input:focus {outline: 0;}
 
 .topnav {
     overflow: hidden;
@@ -124,3 +125,36 @@ button:focus {outline:0;}
     background: #ff6600;
     color: white;
   }  
+  .loginForm {
+    background-color: lightslategray;
+    margin-top: 10%;
+    width: 40%;
+    position: relative;
+    left: 30%;
+    height: 200px;
+  }
+  .formGroup {
+    margin-top: 20px;
+    color: white;
+    font-size: 20px;
+    height: 100%;
+    margin-left: 20px;
+  }
+  .form-control {
+    width: 60%;
+    height: 50px;
+    margin-left: 20px;
+    background-color: cadetblue;
+    border-width: 0;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    color: white;
+  }
+  .logintxt{
+    text-align: center;
+    background-color: lightslategray;
+  }
+  .loginNav {
+    position: relative;
+    left: 62%;
+  }
