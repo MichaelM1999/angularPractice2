@@ -12,6 +12,8 @@ import { Navbar } from './nav/app.navbar';
 import { Error404Component } from './errors/app.404component';
 import { StockRouteActivator } from './stock-details/stock-details.activator.service';
 import { AboutPage } from './about/app.about-component';
+import { ContactPage } from './contact/app.contact-component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import { AboutPage } from './about/app.about-component';
     Navbar,
     Error404Component,
     AboutPage,
+    ContactPage,
     
   ],
   imports: [
