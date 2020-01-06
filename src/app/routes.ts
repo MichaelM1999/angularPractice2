@@ -6,11 +6,13 @@ import { StockRouteActivator } from './stock-details/stock-details.activator.ser
 import{ AboutPage } from './about/app.about-component'
 import { ContactPage } from './contact/app.contact-component'
 import { LoginPage } from './users/user.login'
+import { HomeComponent } from './home/home.component'
 
 export const appRoutes:Routes = [
     { path: 'stocks', component: StockListComponent},
     { path: 'stocks/:id', component: StockDetailsComponent,
         canActivate: [StockRouteActivator] },
+    { path: 'home', component: HomeComponent},
     { path: 'about', component: AboutPage},
     { path: 'login', component: LoginPage},
     { path: 'contact', component: ContactPage},
