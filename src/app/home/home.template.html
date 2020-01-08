@@ -1,7 +1,9 @@
 <div>
     <h1 class="MainTitle">Search by Symbol</h1>
     <div class="MainSearchBar">
-        <input type="text" placeholder="Stock Symbol" class="searchInput">
-        <button type="submit" class="searchbutton" >Search</button>
+        <form #searchForm="ngForm" (ngSubmit)="handleSearch(searchForm.value)" autocomplete="off">
+            <input (ngModel)="searchInput" name="searchInput" type="text" placeholder="Stock Symbol" class="searchInput">
+            <button type="submit" class="searchbutton" >Search</button>
+        </form>
     </div>
 </div>

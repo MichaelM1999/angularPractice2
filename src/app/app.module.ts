@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { StockThumbnailComponent } from './stocks/app.stockThumbnail';
@@ -16,6 +18,8 @@ import { ContactPage } from './contact/app.contact-component';
 import { LoginPage } from './users/user.login';
 import { HomeComponent } from './home/home.component';
 
+import { stockSearch } from './services/api.stock';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,10 +35,13 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [
     StockService,
+    stockSearch,
     StockRouteActivator,
   ],
   bootstrap: [AppComponent]
