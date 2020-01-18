@@ -1,24 +1,33 @@
 import { Component, OnInit } from '@angular/core';
 import { stockSearch } from '../services/api.stock';
+import { Chart } from 'chart.js';
 
 
 
 
 @Component({
     selector: 'HomeComponent',
-    templateUrl: '/home.template.html'
+    templateUrl: '/home.template.html',
+    
 
 })
 export class HomeComponent implements OnInit{
-   public returnedStock:any
+    public returnedStock:any
+    chart = [];
+    chart2 =[];
 
     constructor(private stockSearch: stockSearch){
     }
+
     ngOnInit(){
         this.stockSearch.getDate().subscribe((res)=>{
             console.log(res)
         })
     }
+    followStock(searchItem){
+        console.log(searchItem)
+    }
+
     handleSearch(searchItem){
         const priceArry = []
         const dateArry = []
@@ -38,12 +47,12 @@ export class HomeComponent implements OnInit{
             reversePriceArry.push(priceArry.reverse())
             reverseDateArry.push(dateArry.reverse())
             console.log(reversePriceArry[0][6])
-            // console.log(priceArry.reverse(), dateArry.reverse(), "reversed")
-            // for (let i = 99; i < priceArry.length; i--){
-            //     console.log(priceArry[i])
-            // }
-            console.log(reversePriceArry)
-            console.log(((reversePriceArry[0][0])-(reversePriceArry[0][6])).toString().slice(0,8))
+            console.log(reverseDateArry)
+            //date arrays
+            let weeklyDates = reverseDateArry[0].slice(92, 99)
+            let monthlyDates = reverseDateArry[0].slice(69, 99)
+
+            console.log(monthlyDates)
             this.returnedStock = {
                 priceArry,
                 dateArry,
@@ -53,8 +62,78 @@ export class HomeComponent implements OnInit{
                 weeklychangeCheck: Math.sign((reversePriceArry[0][99])-(reversePriceArry[0][98])),
                 monthlychange: ((reversePriceArry[0][99])-(reversePriceArry[0][69])).toString().slice(0,8),
                 monthlychangeCheck: Math.sign((reversePriceArry[0][99])-(reversePriceArry[0][98])),
+                weeklyDates: (reverseDateArry[0].slice(92, 99)),
+                weeklyData: (reversePriceArry[0].slice(92, 99)),
+                monthlyDates: (monthlyDates),
+                monthlyData: (reversePriceArry[0].slice(69, 99)),
                 currentValue: (reversePriceArry[0][99])
             }
-        })
-    }
+            this.chart = new Chart('canvas', {
+                type: 'line',
+                data: {
+                    labels: this.returnedStock.weeklyDates,
+                    datasets: [{
+                        label: 'Value in USD$',
+                        data: this.returnedStock.weeklyData,
+                        backgroundColor: [
+                            'rgba(10, 245, 155, 0.2)',
+                            'rgba(10, 245, 155, 0.2)',
+                            'rgba(10, 245, 155, 0.2)',
+                            'rgba(10, 245, 155, 0.2)',
+                            'rgba(10, 245, 155, 0.2)',
+                            'rgba(10, 245, 155, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(0, 0, 0, 1)',
+                            'rgba(0, 0, 0, 1)',
+                            'rgba(0, 0, 0, 1)',
+                            'rgba(0, 0, 0, 1)',
+                            'rgba(0, 0, 0, 1)',
+                            'rgba(0, 0, 0, 1)'
+                        ],
+                        borderWidth: 1
+                        }]
+                    },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true
+                }}]}}
+                })
+                this.chart2 = new Chart('canvas2', {
+                    type: 'line',
+                    data: {
+                        labels: this.returnedStock.monthlyDates,
+                        datasets: [{
+                            label: 'Value in USD$',
+                            data: this.returnedStock.monthlyData,
+                            backgroundColor: [
+                                'rgba(10, 245, 155, 0.2)',
+                                'rgba(10, 245, 155, 0.2)',
+                                'rgba(10, 245, 155, 0.2)',
+                                'rgba(10, 245, 155, 0.2)',
+                                'rgba(10, 245, 155, 0.2)',
+                                'rgba(10, 245, 155, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(0, 0, 0, 1)',
+                                'rgba(0, 0, 0, 1)',
+                                'rgba(0, 0, 0, 1)',
+                                'rgba(0, 0, 0, 1)',
+                                'rgba(0, 0, 0, 1)',
+                                'rgba(0, 0, 0, 1)'
+                            ],
+                            borderWidth: 1
+                            }]
+                        },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true
+                        }}]}}
+                        }) 
+            }
+    )}
 }

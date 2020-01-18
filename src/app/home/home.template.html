@@ -5,11 +5,31 @@
             <input (ngModel)="searchInput" name="searchInput" type="text" placeholder="Stock Symbol" class="searchInput">
             <button type="submit" class="searchbutton" >Search</button>
         </form>
-        <div *ngIf="returnedStock">
+        <div *ngIf="returnedStock" class="currentVal">
             <div>Current Value: {{returnedStock?.currentValue | currency:'USD' : 'symbol' : '1.3-5'}}</div>
-            <div>Daily change: <span *ngIf="returnedStock.dailychangeCheck === 1">+</span>{{returnedStock?.dailychange | currency:'USD' : 'symbol' : '1.3-5'}}</div>
-            <div>Weekly change: <span *ngIf="returnedStock.weeklychangeCheck === 1">+</span>{{returnedStock?.weeklychange | currency:'USD' : 'symbol' : '1.3-5'}}</div>
-            <div>Monthly change: <span *ngIf="returnedStock.monthlychangeCheck === 1">+</span>{{returnedStock?.monthlychange | currency:'USD' : 'symbol' : '1.3-5'}}</div>
+            
         </div>
+        <div *ngIf="returnedStock" class="row">
+            <div class="column">
+                    <div>Daily change: <span *ngIf="returnedStock.dailychangeCheck === 1">+</span>{{returnedStock?.dailychange | currency:'USD' : 'symbol' : '1.3-5'}}</div>
+            </div>
+            <div class="column">
+                    <div>Weekly change: <span *ngIf="returnedStock.weeklychangeCheck === 1">+</span>{{returnedStock?.weeklychange | currency:'USD' : 'symbol' : '1.3-5'}}</div>
+            </div>
+            <div class="column">
+                    <div>Monthly change: <span *ngIf="returnedStock.monthlychangeCheck === 1">+</span>{{returnedStock?.monthlychange | currency:'USD' : 'symbol' : '1.3-5'}}</div>
+            </div>
+        </div>
+        <br>
+        <h2 *ngIf="returnedStock">Weekly Graph</h2>
+        <div *ngIf="chart">
+            <canvas id="canvas">{{ chart }}</canvas>
+        </div>
+        <br>
+        <h2 *ngIf="returnedStock">Monthly Graph</h2>
+        <div *ngIf="chart">
+                <canvas id="canvas2">{{ chart }}</canvas>
+            </div>
     </div>
 </div>
+    

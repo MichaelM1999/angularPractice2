@@ -89,12 +89,19 @@ input:focus {outline: 0;}
       background-color: lightslategray;
       text-align: center;
   }
+  .appPic{
+    float: left;
+    margin-left: 5%;
+    width: 20%;
+  }
   .contactBox {
       background-color: lightslategray;
-      text-align: center;
+      align-content: center;
   }
-  .appPic{
-      width: 25%;
+  .contactBox::after{
+    content: "";
+    display: table;
+    clear: both;
   }
   .fa {
     padding: 20px;
@@ -178,5 +185,25 @@ input:focus {outline: 0;}
     height: 30px;
   }
   .searchbutton {
+    height: 30px;
+  }
+  .column {
+    float: left;
+    margin-top: 20px;
+    margin-left: 24px;
+    width: 30%;
+    text-align: center;
+    background-color: white;
+  }
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .currentVal{ 
+    margin-top: 20px;
+    background-color: white;
+  }
+  .followButton{
     height: 30px;
   }
