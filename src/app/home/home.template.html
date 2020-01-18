@@ -5,5 +5,11 @@
             <input (ngModel)="searchInput" name="searchInput" type="text" placeholder="Stock Symbol" class="searchInput">
             <button type="submit" class="searchbutton" >Search</button>
         </form>
+        <div *ngIf="returnedStock">
+            <div>Current Value: {{returnedStock?.currentValue | currency:'USD' : 'symbol' : '1.3-5'}}</div>
+            <div>Daily change: <span *ngIf="returnedStock.dailychangeCheck === 1">+</span>{{returnedStock?.dailychange | currency:'USD' : 'symbol' : '1.3-5'}}</div>
+            <div>Weekly change: <span *ngIf="returnedStock.weeklychangeCheck === 1">+</span>{{returnedStock?.weeklychange | currency:'USD' : 'symbol' : '1.3-5'}}</div>
+            <div>Monthly change: <span *ngIf="returnedStock.monthlychangeCheck === 1">+</span>{{returnedStock?.monthlychange | currency:'USD' : 'symbol' : '1.3-5'}}</div>
+        </div>
     </div>
 </div>
