@@ -24,7 +24,10 @@
     "angular-plotly.js": "^1.5.0",
     "chart.js": "^2.9.3",
     "chartist": "^0.11.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
     "moment": "^2.24.0",
+    "mongoose": "^5.8.9",
     "plotly.js": "^1.52.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
@@ -50,5 +53,17 @@
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
     "typescript": "~3.5.3"
-  }
+  },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.",
+  "main": "karma.conf.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichaelM1999/angularPractice2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MichaelM1999/angularPractice2/issues"
+  },
+  "homepage": "https://github.com/MichaelM1999/angularPractice2#readme"
 }

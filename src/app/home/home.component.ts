@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { stockSearch } from '../services/api.stock';
 import { Chart } from 'chart.js';
+import { BackendHook } from '../services/api.backendhook'
 
 
 
@@ -16,17 +17,21 @@ export class HomeComponent implements OnInit{
     chart = [];
     chart2 =[];
 
-    constructor(private stockSearch: stockSearch){
+    constructor(private stockSearch: stockSearch, private API: BackendHook){
     }
 
     ngOnInit(){
         this.stockSearch.getDate().subscribe((res)=>{
             console.log(res)
         })
+    
     }
-    followStock(searchItem){
-        console.log(searchItem)
-    }
+    // followStock(){
+    //     this.API.getStocks().subscribe((res)=>{
+
+    //     })
+    
+    // }
 
     handleSearch(searchItem){
         const priceArry = []

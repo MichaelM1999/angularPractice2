@@ -2,8 +2,9 @@
     <h1 class="MainTitle">Search by Symbol</h1>
     <div class="MainSearchBar">
         <form #searchForm="ngForm" (ngSubmit)="handleSearch(searchForm.value)" autocomplete="off">
-            <input (ngModel)="searchInput" name="searchInput" type="text" placeholder="Stock Symbol" class="searchInput">
+            <input #textform (ngModel)="searchInput" name="searchInput" type="text" placeholder="Stock Symbol" class="searchInput">
             <button type="submit" class="searchbutton" >Search</button>
+            <button *ngIf="returnedStock" (click)="followStock(textform.value)">follow</button>
         </form>
         <div *ngIf="returnedStock" class="currentVal">
             <div>Current Value: {{returnedStock?.currentValue | currency:'USD' : 'symbol' : '1.3-5'}}</div>

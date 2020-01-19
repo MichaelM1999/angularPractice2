@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { StockService } from './shared/stock.service'
+import { BackendHook } from '../services/api.backendhook'
 @Component({
     selector: 'stocks-list',
     templateUrl:'./app.stocklist.html'
@@ -8,7 +9,7 @@ import { StockService } from './shared/stock.service'
 export class StockListComponent implements OnInit {
     Stocks:any[]
 
-    constructor(private stockService: StockService) {
+    constructor(private stockService: StockService, private backend: BackendHook) {
         
     }
     ngOnInit() {

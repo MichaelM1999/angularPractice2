@@ -1,12 +1,21 @@
 <div>
     <h1>{{ stock?.name }}</h1>
-    <div class="infoBox">
-        <p class="stocktxt">New York Stock Exchange Symbol: {{stock?.symbol}}</p>
-        <p class="stocktxt">Current Value: {{stock?.value}}</p>
-        <p class="stocktxt">Percentage Change in Value: %{{stock?.percentage}}</p>
-        <p class="stocktxt">Avalable Shares: {{stock?.volume}}</p>
+    <div class="infoBox" *ngIf="returnedStock">
+        <p class="stocktxt">New York Stock Exchange Symbol: {{returnedStock?.symbol}}</p>
+        <p class="stocktxt">Current Value: {{returnedStock?.currentValue | currency:'USD' : 'symbol' : '1.3-5'}}</p>
+        <p class="stocktxt">Percentage Change in Value: {{returnedStock?.dailyPercentage | percent:'1.3-5'}}</p>
+        <p class="stocktxt">Avalable Shares: {{returnedStock?.volume}}</p>
     </div>
     <div class="graphBox">
         <h1>Graph Box</h1>
+        <h2 *ngIf="returnedStock">Weekly Graph</h2>
+        <div *ngIf="chart">
+            <canvas id="canvas">{{ chart }}</canvas>
+        </div>
+        <br>
+        <h2 *ngIf="returnedStock">Monthly Graph</h2>
+        <div *ngIf="chart">
+                <canvas id="canvas2">{{ chart }}</canvas>
+            </div>
     </div>
 </div>

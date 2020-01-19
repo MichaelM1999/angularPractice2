@@ -17,9 +17,11 @@ import { StockRouteActivator } from './stock-details/stock-details.activator.ser
 import { AboutPage } from './about/app.about-component';
 import { ContactPage } from './contact/app.contact-component';
 import { LoginPage } from './users/user.login';
+import { AccountPage } from './account/account';
 import { HomeComponent } from './home/home.component';
 
 import { stockSearch } from './services/api.stock';
+import { BackendHook } from './services/api.backendhook';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { stockSearch } from './services/api.stock';
     StockListComponent,
     StockDetailsComponent,
     Navbar,
+    AccountPage,
     Error404Component,
     AboutPage,
     ContactPage,
@@ -43,6 +46,7 @@ import { stockSearch } from './services/api.stock';
   providers: [
     StockService,
     stockSearch,
+    BackendHook,
     StockRouteActivator,
   ],
   bootstrap: [AppComponent]
