@@ -207,3 +207,11 @@ input:focus {outline: 0;}
   .followButton{
     height: 30px;
   }
+  .tickerBx{
+    position: relative;
+    top: -200px;
+    background: lightslategray;
+    width: 80%;
+    right: -10%;
+  }
+  

@@ -8,6 +8,9 @@ import { Injectable } from '@angular/core'
         getStock(id:number) {
             return STOCKS.find(stock => stock.id === id)
         }
+        getSymbols(){
+            return symbols
+        }
     }
     const STOCKS = [{
         id: 1,
@@ -42,3 +45,4 @@ import { Injectable } from '@angular/core'
         name: "Sprint",
         volume: "643 units"
     },]
+    const symbols = ["CEI","GOOG","TSLA","APPl","S","TWTR","NFLX","FB","MSFT","DIS","SBUX","BABA"]

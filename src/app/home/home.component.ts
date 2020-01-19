@@ -6,6 +6,7 @@ import { BackendHook } from '../services/api.backendhook'
 
 
 
+
 @Component({
     selector: 'HomeComponent',
     templateUrl: '/home.template.html',

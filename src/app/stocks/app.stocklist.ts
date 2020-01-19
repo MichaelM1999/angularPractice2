@@ -8,6 +8,7 @@ import { BackendHook } from '../services/api.backendhook'
 })
 export class StockListComponent implements OnInit {
     Stocks:any[]
+    
 
     constructor(private stockService: StockService, private backend: BackendHook) {
         

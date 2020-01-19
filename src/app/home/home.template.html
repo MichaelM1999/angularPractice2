@@ -31,6 +31,7 @@
         <div *ngIf="chart">
                 <canvas id="canvas2">{{ chart }}</canvas>
             </div>
+        <Ticker *ngIf="!returnedStock"></Ticker>
     </div>
 </div>
     
