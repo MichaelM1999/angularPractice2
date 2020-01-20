@@ -1,5 +1,18 @@
-<form #searchForm="ngForm" (ngSubmit)="handleLogin(searchForm.value)" autocomplete="off">
-        <input #username (ngModel)="username" name="username" type="text" placeholder="username" class="searchInput">
-        <input #username (ngModel)="password" name="password" type="password" placeholder="password" class="searchInput">
-        <button type="submit" class="searchbutton" >Search</button>
+<form #searchForm="ngForm" (ngSubmit)="handleLogin(searchForm.value)" autocomplete="off" class="AccountBx">
+    <h1>Create An Account</h1>
+        <!-- <label for="usernameA">Username:</label> -->
+        <input #username (ngModel)="username" name="username" type="text" placeholder="username" class="searchInputA" id="usernameA">
+        <!-- <label for="passwordA">Passoword:</label> -->
+        <input #password (ngModel)="password" name="password" type="password" placeholder="password" class="searchInputA" id="passwordA">
+        <!-- <label for="firstnameA">FirstName:</label> -->
+        <input #Firstname (ngModel)=" Firstname" name="Firstname" type="text" placeholder="John" class="searchInputA" id="firstnameA">
+        <!-- <label for="lastnameA">LastName:</label> -->
+        <input #Lastname (ngModel)="Lastname" name="Lastname" type="text" placeholder="Smith" class="searchInputA" id="lastnameA">
+        <!-- <label for="emailA">Email:</label> -->
+        <input #Email (ngModel)="Email" name="Email" type="email" placeholder="JohnSmith@gmail.com" class="searchInputA" id="emailA">
+        <!-- <label for="ageA">Age:</label> -->
+        <input #Age (ngModel)="Age" name="Age" type="number" placeholder="21" class="searchInputA" id="ageA">
+        <div>
+            <button type="submit" class="searchbuttonA" [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Search</button>
+        </div>
     </form>

@@ -11,6 +11,7 @@
             <br>
             <input id="Password" type="password" class="form-control" placeholder="Password..."/>
         </div>
+        <button [routerLink]="['/account']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="searchbuttonA">Create an Account</button>
+        <button [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="searchbuttonA">Login</button>
     </form>
-    <a [routerLink]="['/account']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Create an Account</a>
 </div>
