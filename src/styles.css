@@ -297,3 +297,9 @@ input:focus {outline: 0;}
   .searchbuttonA:hover::before{
     height: 180%;
   }
+  .positive {
+    color: cadetblue;
+  }
+  .negative {
+    color: red;
+  }

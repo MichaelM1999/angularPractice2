@@ -12,7 +12,7 @@ import { AccountPage } from './account/account'
 export const appRoutes:Routes = [
     { path: 'stocks', component: StockListComponent},
     { path: 'stocks/:id', component: StockDetailsComponent,
-        canActivate: [StockRouteActivator] },
+        canActivate: [StockRouteActivator]},
     { path: 'home', component: HomeComponent},
     { path: 'about', component: AboutPage},
     { path: 'account', component: AccountPage},
