@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const routes = require("./routes");
 var bodyParser = require("body-parser");
 const app = express()
-var PORT = process.env.PORT || 4201;
+var PORT = process.env.PORT || 4202;
 const cors = require('cors')
 
 var corsOptions = {
@@ -23,11 +23,11 @@ if (process.env.NODE_ENV === "production") {
 app.use(routes);
 // routes 
 // get all
-app.route('api/followedStocks').get((req,res) =>{
-  res.send({
-    stocks: [{name: "CEI"},{name: "GOOG"}]
-  })
-})
+// app.route('api/followedStocks').get((req,res) =>{
+//   res.send({
+//     stocks: [{name: "CEI"},{name: "GOOG"}]
+//   })
+// })
 //get one
 // app.route('api/')
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");

@@ -9,10 +9,10 @@ export interface Stock {
 export class BackendHook {
     constructor(private http: HttpClient){
 }
-    getStocks() {
-      return 
-      this.http.get('/api/followedStocks')
-    }
+    // getStocks() {
+    //   return console.log('hwloe')
+    //   this.http.get()
+    // }
     //login page
     getUser(user): Observable<object>{
 

@@ -3,15 +3,9 @@ import { stockSearch } from '../services/api.stock';
 import { Chart } from 'chart.js';
 import { BackendHook } from '../services/api.backendhook'
 
-
-
-
-
 @Component({
     selector: 'HomeComponent',
     templateUrl: '/home.template.html',
-    
-
 })
 export class HomeComponent implements OnInit{
     public returnedStock:any
@@ -19,32 +13,18 @@ export class HomeComponent implements OnInit{
     chart2 =[];
 
     constructor(private stockSearch: stockSearch, private API: BackendHook){
+
     }
+    ngOnInit(){ 
 
-    ngOnInit(){
-        this.stockSearch.getDate().subscribe((res)=>{
-            console.log(res)
-        })
-    
     }
-    // followStock(){
-    //     this.API.getStocks().subscribe((res)=>{
-
-    //     })
-    
-    // }
-
     handleSearch(searchItem){
         const priceArry = []
         const dateArry = []
         const reversePriceArry = []
         const reverseDateArry = []
         this.stockSearch.getStock(searchItem).subscribe((res)=> {
-            // console.log(res)
-
             let dailyseries = res["Time Series (Daily)"]
-            // console.log(res["Meta Data"])
-            // console.log(dailyseries)
 
             for (let key in dailyseries){
                 dateArry.push([key][0])
@@ -52,13 +32,10 @@ export class HomeComponent implements OnInit{
             }
             reversePriceArry.push(priceArry.reverse())
             reverseDateArry.push(dateArry.reverse())
-            console.log(reversePriceArry[0][6])
-            console.log(reverseDateArry)
             //date arrays
             let weeklyDates = reverseDateArry[0].slice(92, 99)
             let monthlyDates = reverseDateArry[0].slice(69, 99)
-
-            console.log(monthlyDates)
+            //returning Graph Object
             this.returnedStock = {
                 priceArry,
                 dateArry,
@@ -68,12 +45,13 @@ export class HomeComponent implements OnInit{
                 weeklychangeCheck: Math.sign((reversePriceArry[0][99])-(reversePriceArry[0][92])),
                 monthlychange: ((reversePriceArry[0][99])-(reversePriceArry[0][69])).toString().slice(0,8),
                 monthlychangeCheck: Math.sign((reversePriceArry[0][99])-(reversePriceArry[0][69])),
-                weeklyDates: (reverseDateArry[0].slice(92, 99)),
+                weeklyDates: (weeklyDates),
                 weeklyData: (reversePriceArry[0].slice(92, 99)),
                 monthlyDates: (monthlyDates),
                 monthlyData: (reversePriceArry[0].slice(69, 99)),
                 currentValue: (reversePriceArry[0][99])
             }
+            //Creating Charts
             this.chart = new Chart('canvas', {
                 type: 'line',
                 data: {
