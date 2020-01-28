@@ -19,9 +19,12 @@ export class HomeComponent implements OnInit{
 
     }
     handleInfo(searchItem){
-        console.log(searchItem)
-        window.open( 
-            "https://www.nyse.com/site-search?q="+ searchItem, "_blank");
+        this.API.testRoute().subscribe((res)=>{
+            console.log(res)
+        })
+        // console.log(searchItem)
+        // window.open( 
+        //     "https://www.nyse.com/site-search?q="+ searchItem, "_blank");
     }
     handleSearch(searchItem){
         const priceArry = []

@@ -9,8 +9,6 @@ export class AccountPage {
     constructor(private API: BackendHook){
     }
     handleLogin(user){
-        this.API.newUser(user).subscribe((res)=>{
-            console.log(res)
-        })
+        this.API.testRoute()
     }
 }
