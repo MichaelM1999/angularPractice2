@@ -21,15 +21,7 @@ if (process.env.NODE_ENV === "production") {
     app.use(express.static("client/build"));
   }
 app.use(routes);
-// routes 
-// get all
-// app.route('api/followedStocks').get((req,res) =>{
-//   res.send({
-//     stocks: [{name: "CEI"},{name: "GOOG"}]
-//   })
-// })
-//get one
-// app.route('api/')
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
 
 app.listen(PORT, () => {
