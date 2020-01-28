@@ -13,7 +13,7 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017');
+mongoose.connect('mongodb://localhost/reactreadinglist');
 
 const connection = mongoose.connection;
 
@@ -63,7 +63,7 @@ router.route('/shares/delete').post((req, res) =>{
 
 //logs user in
 router.route('/user/login').post((req, res) => {
-    console.log(req.body)
+    console.log(req.body, "gisia")
   Models.User.findOne({username: req.body.username}).then(data => {
     res.json(data);
   })
@@ -72,7 +72,7 @@ router.route('/user/login').post((req, res) => {
 
 //creates user
 router.route('/user/create').post((req, res) => {
-  console.log(req.body)
+  console.log(req.body, "helai")
   Models.User.exists({username: req.body.username}).then(data => {
     console.log(data)
     if (data === true) {

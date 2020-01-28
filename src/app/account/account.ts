@@ -8,7 +8,9 @@ import { BackendHook } from '../services/api.backendhook'
 export class AccountPage {
     constructor(private API: BackendHook){
     }
-    handleLogin(user){
-        this.API.testRoute()
+    createUser(user){
+        this.API.loginUser(user).subscribe((res) =>{
+            console.log(res)
+        })
     }
 }

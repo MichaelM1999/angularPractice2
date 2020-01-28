@@ -1,4 +1,4 @@
-<form #searchForm="ngForm" (ngSubmit)="handleLogin(searchForm.value)" autocomplete="off" class="AccountBx">
+<form #searchForm="ngForm" (ngSubmit)="createUser(searchForm.value)" autocomplete="off" class="AccountBx">
     <h1>Create An Account</h1>
         <!-- <label for="usernameA">Username:</label> -->
         <input #username (ngModel)="username" name="username" type="text" placeholder="username" class="searchInputA" id="usernameA">
@@ -13,6 +13,6 @@
         <!-- <label for="ageA">Age:</label> -->
         <input #Age (ngModel)="Age" name="Age" type="number" placeholder="21" class="searchInputA" id="ageA">
         <div>
-            <button type="submit" class="searchbuttonA" [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Search</button>
+            <button type="submit" class="searchbuttonA" >Search</button>
         </div>
     </form>
