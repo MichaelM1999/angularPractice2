@@ -4,7 +4,7 @@
         <form #searchForm="ngForm" (ngSubmit)="handleSearch(searchForm.value)" autocomplete="off">
             <input #textform (ngModel)="searchInput" name="searchInput" type="text" placeholder="Stock Symbol" class="searchInput">
             <button type="submit" class="searchbuttonA" >Search</button>
-            <button type="button" *ngIf="returnedStock" (click)="followStock(textform.value)" class="searchbuttonA">Follow</button>
+            <button type="button" *ngIf="returnedStock" (click)="handleInfo(textform.value)" class="searchbuttonA">More Info</button>
         </form>
         <div *ngIf="returnedStock" class="currentVal">
             <div>Current Value: {{returnedStock?.currentValue | currency:'USD' : 'symbol' : '1.3-5'}}</div>

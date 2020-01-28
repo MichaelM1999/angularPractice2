@@ -18,6 +18,11 @@ export class HomeComponent implements OnInit{
     ngOnInit(){ 
 
     }
+    handleInfo(searchItem){
+        console.log(searchItem)
+        window.open( 
+            "https://www.nyse.com/site-search?q="+ searchItem, "_blank");
+    }
     handleSearch(searchItem){
         const priceArry = []
         const dateArry = []
