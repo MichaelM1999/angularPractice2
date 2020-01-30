@@ -13,19 +13,35 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost/reactreadinglist');
+DATABASE = "mongodb://localhost/reactreadinglist";
+// mongoose.connect('mongodb://localhost:27017/StockSim');
+mongoose.connect(
+  DATABASE, 
+  {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useUnifiedTopology: true
+  },
+  err => {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("connection success");
+    }
+  }
+)
 
-const connection = mongoose.connection;
+// const connection = mongoose.connection;
 
-connection.once('open', () => {
-  console.log('MongoDb connection established');
-})
+// connection.once('open', () => {
+//   console.log('MongoDb connection established');
+// })
 
 //gets all followed stocks
 router.route('/shares/get').get((req, res) => {
     console.log('hellooooo', req.body.user);
   Models.Stock.find({owner: req.body.user}.then(data => {
-    res.json(data)
+    res.send(data)
   }))
 });
 
@@ -34,7 +50,7 @@ router.route('/shares/follow').post((req, res) => {
   Models.Stock.exists({stock_name: req.body.stock, owner: req.body.user}).then(data => {
     console.log(data, "data herre")
   if (data === true) {
-      res.json({err: "you're already following"})
+      res.send({err: "you're already following"})
       console.log("already here")
       
     }
@@ -65,7 +81,8 @@ router.route('/shares/delete').post((req, res) =>{
 router.route('/user/login').post((req, res) => {
     console.log(req.body, "gisia")
   Models.User.findOne({username: req.body.username}).then(data => {
-    res.json(data);
+    res.send(data);
+    console.log("running user login route")
   })
   .catch(err => res.status(422).json(err));
 });
@@ -76,7 +93,7 @@ router.route('/user/create').post((req, res) => {
   Models.User.exists({username: req.body.username}).then(data => {
     console.log(data)
     if (data === true) {
-        res.json({err: 'User already exists!'})
+        res.send({err: 'User already exists!'})
         console.log("already here")
       }
       else {
