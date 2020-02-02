@@ -8,7 +8,7 @@ export class StockRouteActivator implements CanActivate {
 
     }
     canActivate(route:ActivatedRouteSnapshot) {
-        const stockExists =   !!this.stockService.getStock(+route.params['id'])
+        const stockExists =   !!this.stockService.getStock(route.params['name'])
 
         if (!stockExists)
             this.router.navigate(['/404'])

@@ -1,10 +1,10 @@
 <div class="stockbx">
-    <h3 class="stockName">Stock Name: {{ Stock.name }}</h3>
+    <h3 class="stockName" #stockName>Stock Name: {{ Stock.stock_name }}</h3>
     <div class="infoWrap">
-        <p class="stocksymbol stocktxt">Stock Symbol: {{ Stock.symbol }}</p>
+        <p class="stocksymbol stocktxt">Stock Symbol: {{ Stock.stock_name }}</p>
     </div>
     <div class="btnBar">
-            <button class="optbutton" value="Add" [routerLink]="['/stocks', Stock.id]"><span>View</span></button>
-            <button class="optbutton" value="Delete"><span>Remove</span></button>
+            <button class="optbutton" value="Add" [routerLink]="['/stocks', Stock.stock_name]"><span>View</span></button>
+            <button class="optbutton" value="Delete" (click)="handleUnfollow(stockName.value)"><span>Remove</span></button>
         </div>
 </div>

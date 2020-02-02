@@ -17,10 +17,10 @@ export class StockDetailsComponent {
 
     }
     ngOnInit() {
-        this.stock = this.stockService.getStock(+this.route.snapshot.params['id'])
-        console.log(typeof(this.route.snapshot.params['id']))
+        this.stock = (this.route.snapshot.params['name'])
+        console.log(typeof(this.route.snapshot.params['name']))
         console.log(this.stock)
-        this.stockInfo(this.stock.symbol)
+        this.stockInfo(this.stock)
     } 
     stockInfo(searchItem){
         console.log( typeof searchItem)

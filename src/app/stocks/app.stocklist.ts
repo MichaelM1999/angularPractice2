@@ -20,8 +20,10 @@ export class StockListComponent implements OnInit {
         console.log(this.User)
     }
     getstocks(user) {
-        console.log(user)
-        this.backend.getFollowedStock(user).subscribe((res)=>{
+        let username ={
+            username: user
+        }
+        this.backend.getFollowedStock(username).subscribe((res)=>{
             console.log(res)
             this.Stocks = res
         })

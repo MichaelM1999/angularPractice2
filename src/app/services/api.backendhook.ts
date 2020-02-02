@@ -23,7 +23,7 @@ export class BackendHook {
     return this.http.post(`${this.uri}/shares/follow`, stock);
   }
   getFollowedStock(stock){
-    return this.http.post(`${this.uri}/shares/get`, stock);
+    return this.http.post(`${this.uri}/shares/find`, stock);
   }
   removeStock(stock){
     return this.http.post(`${this.uri}/shares/delete`, stock);

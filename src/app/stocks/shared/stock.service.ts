@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core'
         getStocks() {
             return STOCKS
         }
-        getStock(id:number) {
-            return STOCKS.find(stock => stock.id === id)
+        getStock(name: string) {
+            return STOCKS.find(stock => stock.symbol === name)
         }
         getSymbols(){
             return symbols

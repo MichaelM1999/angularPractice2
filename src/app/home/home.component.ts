@@ -18,6 +18,20 @@ export class HomeComponent implements OnInit{
     ngOnInit(){ 
 
     }
+    handlefollow(stockName){
+        let followDetails ={
+            stock: stockName,
+            user: sessionStorage.getItem("username")
+        }
+        this.API.followStock(followDetails).subscribe((res)=>{
+            if (res['err']){
+                window.alert("user already following" + followDetails.stock)
+            }
+            else {
+                window.location.href = "/src/stocks"
+            }
+        })
+    }
     handleInfo(searchItem){
         // this.API.testRoute().subscribe((res)=>{
         //     console.log(res)

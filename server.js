@@ -31,21 +31,17 @@ mongoose.connect(
   }
 )
 
-// const connection = mongoose.connection;
+//gets all followed stocks working
+router.route('/shares/find').post((req, res) => {
+    console.log('hellooooo', req.body.username);
+  Models.Stock.find({owner: req.body.username}).then(data => {
+    console.log(data)
+    res.send(data);
 
-// connection.once('open', () => {
-//   console.log('MongoDb connection established');
-// })
-
-//gets all followed stocks
-router.route('/shares/get').get((req, res) => {
-    console.log('hellooooo', req.body);
-  Models.Stock.find({owner: req.body}.then(data => {
-    res.send(data)
-  }))
+  })
 });
 
-//follows a stock
+//follows a stock working
 router.route('/shares/follow').post((req, res) => {
   Models.Stock.exists({stock_name: req.body.stock, owner: req.body.user}).then(data => {
     console.log(data, "data herre")
@@ -70,14 +66,14 @@ router.route('/shares/follow').post((req, res) => {
 
 //removes stock from user
 router.route('/shares/delete').post((req, res) =>{
-  Models.Stock.deleteOne({owner: req.body.stockunfollow.owner, stock_name: req.body.stockunfollow.stock_name}).then(data =>{
+  Models.Stock.deleteOne({owner: req.body.owner, stock_name: req.body.stock_name}).then(data =>{
     res.send(data)
     // .catch(err => res.status(422).json(err));
     console.log(data);
   })
 })
 
-//logs user in
+//logs user in working
 router.route('/user/login').post((req, res) => {
     console.log(req.body, "gisia")
   Models.User.findOne({username: req.body.username}).then(data => {
@@ -87,7 +83,7 @@ router.route('/user/login').post((req, res) => {
   .catch(err => res.status(422).json(err));
 });
 
-//creates user
+//creates user working
 router.route('/user/create').post((req, res) => {
   console.log(req.body, "helai")
   Models.User.exists({username: req.body.username}).then(data => {
@@ -102,10 +98,6 @@ router.route('/user/create').post((req, res) => {
         console.log("user created");
       }
   })
-})
-
-router.route('/foo').get((req, res) =>{
-  res.json("hello world!!!!")
 })
 
 app.use('/', router);
