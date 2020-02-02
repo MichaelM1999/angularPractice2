@@ -39,8 +39,8 @@ mongoose.connect(
 
 //gets all followed stocks
 router.route('/shares/get').get((req, res) => {
-    console.log('hellooooo', req.body.user);
-  Models.Stock.find({owner: req.body.user}.then(data => {
+    console.log('hellooooo', req.body);
+  Models.Stock.find({owner: req.body}.then(data => {
     res.send(data)
   }))
 });
