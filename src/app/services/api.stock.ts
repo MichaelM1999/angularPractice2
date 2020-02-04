@@ -13,7 +13,6 @@ export class stockSearch {
         const BASEURL2 = "&outputsize=compact&apikey=";
         const APIKEY = "ZQ01F2MEZJSX8EYJ";
         let query = BASEURL + searchItem.searchInput + BASEURL2 + APIKEY;
-        console.log(query)
          return this.http.get(query)
         
     }
@@ -22,7 +21,6 @@ export class stockSearch {
         const BASEURL2 = "&outputsize=compact&apikey=";
         const APIKEY = "ZQ01F2MEZJSX8EYJ";
         let query = BASEURL + searchItem + BASEURL2 + APIKEY;
-        console.log(query)
          return this.http.get(query)
     }
 }

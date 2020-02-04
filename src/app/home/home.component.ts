@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit{
     handlefollow(stockName){
         let followDetails ={
             stock: stockName,
-            user: sessionStorage.getItem("username")
+            user: sessionStorage.getItem("username"),
         }
         this.API.followStock(followDetails).subscribe((res)=>{
             if (res['err']){
@@ -71,7 +71,7 @@ export class HomeComponent implements OnInit{
                 weeklyData: (reversePriceArry[0].slice(92, 99)),
                 monthlyDates: (monthlyDates),
                 monthlyData: (reversePriceArry[0].slice(69, 99)),
-                currentValue: (reversePriceArry[0][99])
+                currentValue: (reversePriceArry[0][99]),
             }
             //Creating Charts
             this.chart = new Chart('canvas', {

@@ -18,12 +18,9 @@ export class StockDetailsComponent {
     }
     ngOnInit() {
         this.stock = (this.route.snapshot.params['name'])
-        console.log(typeof(this.route.snapshot.params['name']))
-        console.log(this.stock)
         this.stockInfo(this.stock)
     } 
     stockInfo(searchItem){
-        console.log( typeof searchItem)
         const priceArry = []
         const dateArry = []
         const volumeArry = []
@@ -31,11 +28,8 @@ export class StockDetailsComponent {
         const reverseDateArry = []
         const reverseVolumeArry = []
         this.stockSearch.getStockAuto(searchItem).subscribe((res)=> {
-            console.log(res)
 
             let dailyseries = res["Time Series (Daily)"]
-            // console.log(res["Meta Data"])
-            // console.log(dailyseries)
 
             for (let key in dailyseries){
                 dateArry.push([key][0])
@@ -45,14 +39,10 @@ export class StockDetailsComponent {
             reverseVolumeArry.push(volumeArry.reverse())
             reversePriceArry.push(priceArry.reverse())
             reverseDateArry.push(dateArry.reverse())
-            console.log(reversePriceArry[0][6])
-            console.log(reverseDateArry)
-            console.log(reverseVolumeArry)
-            //date arrays
+
             let weeklyDates = reverseDateArry[0].slice(92, 99)
             let monthlyDates = reverseDateArry[0].slice(69, 99)
 
-            console.log(monthlyDates)
             this.returnedStock = {
                 priceArry,
                 dateArry,

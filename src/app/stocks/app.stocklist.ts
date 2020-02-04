@@ -17,14 +17,12 @@ export class StockListComponent implements OnInit {
     ngOnInit() {
         this.User = sessionStorage.getItem('username');
         this.getstocks(this.User)  
-        console.log(this.User)
     }
     getstocks(user) {
         let username ={
             username: user
         }
         this.backend.getFollowedStock(username).subscribe((res)=>{
-            console.log(res)
             this.Stocks = res
         })
     }

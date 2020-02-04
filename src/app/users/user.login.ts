@@ -10,7 +10,6 @@ export class LoginPage {
     }
 
     loginUser(user){
-        console.log(user)
         this.API.loginUser(user).subscribe((res)=>{
             if(res === null) {
                 window.alert("incorrect username and password");
