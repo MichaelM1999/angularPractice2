@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit{
         }
         this.API.followStock(followDetails).subscribe((res)=>{
             if (res['err']){
-                window.alert("user already following" + followDetails.stock)
+                window.alert(followDetails.user +" already following " + followDetails.stock)
             }
             else {
                 window.location.href = "/src/stocks"

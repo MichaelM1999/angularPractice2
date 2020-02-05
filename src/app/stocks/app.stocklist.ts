@@ -9,7 +9,7 @@ import { BackendHook } from '../services/api.backendhook'
 export class StockListComponent implements OnInit {
     Stocks:any
     User:any
-
+    Defined: boolean
     constructor(private stockService: StockService, private backend: BackendHook) {
         
     }
@@ -17,13 +17,20 @@ export class StockListComponent implements OnInit {
     ngOnInit() {
         this.User = sessionStorage.getItem('username');
         this.getstocks(this.User)  
+        console.log(this.Stocks);
     }
     getstocks(user) {
         let username ={
             username: user
         }
         this.backend.getFollowedStock(username).subscribe((res)=>{
-            this.Stocks = res
+            let results = res
+            if ( results[0] === undefined){
+                this.Defined = false
+            } else {
+                this.Stocks = res;
+                this.Defined = true
+            }
         })
     }
 }
