@@ -9,7 +9,6 @@ export class Navbar implements OnInit {
 
     ngOnInit(){
         this.loggedUser = sessionStorage.getItem('username');
-        console.log(this.loggedUser);
     }
     logout(){
         this.loggedUser = null

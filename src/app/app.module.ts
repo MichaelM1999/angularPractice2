@@ -18,8 +18,9 @@ import { ContactPage } from './contact/app.contact-component';
 import { LoginPage } from './users/user.login';
 import { AccountPage } from './account/account';
 import { HomeComponent } from './home/home.component';
-import { Ticker } from './ticker/ticker'
+import { Ticker } from './ticker/ticker';
 
+ 
 import { stockSearch } from './services/api.stock';
 import { BackendHook } from './services/api.backendhook';
 
@@ -37,6 +38,7 @@ import { BackendHook } from './services/api.backendhook';
     LoginPage,
     HomeComponent,
     Ticker,
+    
   ],
   imports: [
     BrowserModule,

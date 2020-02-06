@@ -3,6 +3,7 @@
         <a [routerLink]="['/stocks']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Watchlist</a>
         <a [routerLink]="['/contact']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Contact</a>
         <a [routerLink]="['/about']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">About</a>
+        <!-- <a *ngIf="loggedUser"> Welcome: {{ loggedUser }}</a>  -->
         <a *ngIf="!loggedUser"  class="loginNav" [routerLink]="['/login']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">login</a>
-        <a *ngIf="loggedUser" (click)="logout()" class="loginNav" [routerLink]="['/login']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Logout</a>
+        <a *ngIf="loggedUser" (click)="logout()" class="loginNav" [routerLink]="['/login']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Logout {{loggedUser}}</a>
       </div>
