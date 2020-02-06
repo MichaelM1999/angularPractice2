@@ -1,4 +1,4 @@
-<div class="topnav">
+<div class="topnav" *ngIf="loggedUser !== null">
         <a [routerLink]="['/home']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
         <a [routerLink]="['/stocks']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Watchlist</a>
         <a [routerLink]="['/contact']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Contact</a>

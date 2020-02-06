@@ -17,6 +17,6 @@ export const appRoutes:Routes = [
     { path: 'account', component: AccountPage},
     { path: 'login', component: LoginPage},
     { path: 'contact', component: ContactPage},
-    { path: '', redirectTo: '/stocks', pathMatch: 'full'},
+    { path: '', redirectTo: '/login', pathMatch: 'full'},
     { path: '404', component: Error404Component }
 ]

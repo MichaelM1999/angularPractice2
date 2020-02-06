@@ -13,6 +13,7 @@
         <!-- <label for="ageA">Age:</label> -->
         <input #Age (ngModel)="Age" name="Age" type="number" placeholder="21" class="searchInputA" id="ageA">
         <div>
-            <button type="submit" class="searchbuttonA" >Search</button>
+            <button type="submit" class="searchbuttonA">Create</button>
+            <button [routerLink]="['/login']" type="button" class="searchbuttonA">Login</button>
         </div>
     </form>

@@ -8,7 +8,8 @@ export class Navbar implements OnInit {
     public loggedUser:any
 
     ngOnInit(){
-        this.loggedUser = sessionStorage.getItem('username')
+        this.loggedUser = sessionStorage.getItem('username');
+        console.log(this.loggedUser);
     }
     logout(){
         this.loggedUser = null
