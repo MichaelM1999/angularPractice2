@@ -1,15 +1,16 @@
 <h1 class="logintxt">Log-In</h1>
 <div class="loginForm">
-    <form #searchForm="ngForm" autocomplete="off" (ngSubmit)="loginUser(searchForm.value)">
-        
-            <label for="userName">User Name:</label>
+    <form #searchForm="ngForm" autocomplete="off" (ngSubmit)="loginUser(searchForm.value)">  
+            <!-- <label for="userName">User Name:</label> -->
             <br>
             <input #username (ngModel)="username" name="username" id="userName" type="text" class="form-control" placeholder="User Name..."/>
-        
-            <label for="Password">Password:</label>
+            <!-- <label for="Password">Password:</label> -->
             <br>
             <input #password (ngModel)="password" name="password" id="Password" type="password" class="form-control" placeholder="Password..."/>
-        <button [routerLink]="['/account']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="searchbuttonA">Create an Account</button>
-        <button  type="submit" class="searchbuttonA">Login</button>
+            <br>
+            <div class="loginBTNS">
+        <button [routerLink]="['/account']" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="searchbuttonA loginBTNS">Create an Account</button>
+        <button  type="submit" class="searchbuttonA loginBTNS">Login</button>
+    </div>
     </form>
 </div>

@@ -172,9 +172,9 @@ input:focus {outline: 0;}
   .loginForm {
     background-color: lightslategray;
     margin-top: 10%;
-    width: 40%;
+    width: 35%;
     position: relative;
-    left: 30%;
+    left: 32.5%;
     height: 200px;
   }
   .formGroup {
@@ -185,7 +185,7 @@ input:focus {outline: 0;}
     margin-left: 20px;
   }
   .form-control {
-    width: 60%;
+    width: 90%;
     height: 50px;
     margin-left: 20px;
     background-color: cadetblue;
@@ -195,6 +195,10 @@ input:focus {outline: 0;}
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     color: white;
+  }
+  .loginBTNS{
+    position: relative;
+    left: 10%;
   }
   .logintxt{
     text-align: center;
