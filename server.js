@@ -69,7 +69,7 @@ router.route('/shares/delete').post((req, res) =>{
   Models.Stock.deleteOne({owner: req.body.owner, stock_name: req.body.stock_name}).then(data =>{
     res.send(data)
     // .catch(err => res.status(422).json(err));
-    console.log(data);
+    console.log("deleteing", req.body.stock_name);
   })
 })
 

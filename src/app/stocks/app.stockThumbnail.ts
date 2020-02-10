@@ -12,18 +12,15 @@ export class StockThumbnailComponent implements OnInit{
 
     }
     ngOnInit(){
-        this.stockinfo = {
-            
-        }
+
     }
     handleUnfollow(stockName){
         this.stockinfo ={
             owner: sessionStorage.getItem("username"),
-            stock_name: stockName
+            stock_name: this.Stock.stock_name
         }
         this.backend.removeStock(this.stockinfo).subscribe((res)=>{
-            console.log(res)
-            
+            window.location.reload();
         })
     }
 }
