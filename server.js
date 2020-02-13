@@ -14,7 +14,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 DATABASE = "mongodb://localhost/reactreadinglist";
-mongoose.connect(DATABASE);
+mongoose.connect(process.env.MONGOLAB_URI || DATABASE);
 mongoose.connect(
   DATABASE, 
   {
