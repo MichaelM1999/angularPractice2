@@ -1,6 +1,6 @@
 {
   "name": "angular-stocks2020",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "engines": {
     "node": "v10.15.3"
   },
