@@ -1,5 +1,5 @@
 {
-  "name": "ng-firstapp",
+  "name": "angular-stocks2020",
   "version": "0.0.0",
   "engines": {
     "node": "v10.15.3"
@@ -7,6 +7,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "postinstall": "bower install",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -26,6 +27,7 @@
     "angular": "^1.7.9",
     "angular-chartist.js": "^5.0.0-beta.2",
     "angular-plotly.js": "^1.5.0",
+    "bower": "^1.8.8",
     "chart.js": "^2.9.3",
     "chartist": "^0.11.4",
     "cors": "^2.8.5",
