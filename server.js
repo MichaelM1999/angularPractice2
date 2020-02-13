@@ -14,7 +14,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 DATABASE = "mongodb://localhost/reactreadinglist";
-// mongoose.connect('mongodb://localhost:27017/StockSim');
+mongoose.connect(DATABASE);
 mongoose.connect(
   DATABASE, 
   {
