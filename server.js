@@ -32,6 +32,7 @@ mongoose.connect(process.env.MONGOLAB_URI || DATABASE);
 //   }
 // )
 // Serve only the static files form the dist directory
+
 app.use(express.static(__dirname + '/angular-stocks2020'));
 
 app.get('/*', function(req,res) {

@@ -5,7 +5,7 @@ import { BackendHook } from '../services/api.backendhook'
 
 @Component({
     selector: 'HomeComponent',
-    templateUrl: '/home.template.html',
+    templateUrl: './home.template.html',
 })
 export class HomeComponent implements OnInit{
     public returnedStock:any
