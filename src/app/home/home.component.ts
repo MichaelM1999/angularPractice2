@@ -9,6 +9,7 @@ import { BackendHook } from '../services/api.backendhook'
 })
 export class HomeComponent implements OnInit{
     public returnedStock:any
+    searchInput:any
     chart = [];
     chart2 =[];
 
