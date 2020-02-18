@@ -2,7 +2,7 @@ const express = require('express')
 const cors = require('cors');
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-var path = require('path')
+var path = require('path');
 const routes = require("./routes");
 
 const Models = require('./models/index');
@@ -31,8 +31,12 @@ mongoose.connect(process.env.MONGOLAB_URI || DATABASE);
 //     }
 //   }
 // )
-app.get('/', function(req, res){
-  res.sendFile(path.join(__dirname, "src/index.html"));
+// Serve only the static files form the dist directory
+app.use(express.static(__dirname + '/dist/angular-stocks2020'));
+
+app.get('/*', function(req,res) {
+    
+res.sendFile(path.join(__dirname+'/dist/angular-stocks2020/index.html'));
 });
 
 //gets all followed stocks working
