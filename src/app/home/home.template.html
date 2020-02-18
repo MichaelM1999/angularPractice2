@@ -2,7 +2,7 @@
     <h1 class="MainTitle">Search by Symbol</h1>
     <div class="MainSearchBar">
         <form #searchForm="ngForm" (ngSubmit)="handleSearch(searchForm.value)" autocomplete="off">
-            <input #textform (ngModel)="searchInput" name="searchInput" type="text" placeholder="Stock Symbol" class="searchInput">
+            <input #textform [(ngModel)]="searchInput" name="searchInput" type="text" placeholder="Stock Symbol" class="searchInput">
             <button type="submit" class="searchbuttonA" >Search</button>
             <button type="button" *ngIf="returnedStock" (click)="handleInfo(textform.value)" class="searchbuttonA">More Info</button>
             <button type="button" *ngIf="returnedStock" (click)="handlefollow(textform.value)" class="searchbuttonA">Follow</button>
