@@ -36,7 +36,7 @@ app.use(express.static(__dirname + '/angular-stocks2020'));
 
 app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/src/index.html'));
+res.sendFile(path.join(__dirname+'/dist/angular-stocks2020/index.html'));
 });
 
 //gets all followed stocks working
