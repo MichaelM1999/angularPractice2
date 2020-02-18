@@ -31,7 +31,7 @@ mongoose.connect(process.env.MONGOLAB_URI || DATABASE);
 //   }
 // )
 app.get('/', function(req, res){
-  res.sendFile(path.join(__dirname, "src/index.html"));
+  res.sendFile(path.join(__dirname, "/src/index.html"));
 });
 
 //gets all followed stocks working
