@@ -15,21 +15,21 @@ app.use(bodyParser.json());
 
 DATABASE = "mongodb://localhost/reactreadinglist";
 mongoose.connect(process.env.MONGOLAB_URI || DATABASE);
-mongoose.connect(
-  DATABASE, 
-  {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true
-  },
-  err => {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log("connection success");
-    }
-  }
-)
+// mongoose.connect(
+//   DATABASE, 
+//   {
+//     useNewUrlParser: true,
+//     useCreateIndex: true,
+//     useUnifiedTopology: true
+//   },
+//   err => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log("connection success");
+//     }
+//   }
+// )
 app.get('/', function(req, res){
   res.sendFile(path.join(__dirname, "src/index.html"));
 });
