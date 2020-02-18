@@ -6,7 +6,8 @@
   },
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
+    "heroku-postbuild":"ng build --aot --target=production",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -25,7 +26,9 @@
     "@angular/router": "~8.2.14",
     "angular": "^1.7.9",
     "angular-chartist.js": "^5.0.0-beta.2",
+    "@angular/cli": "^8.3.25",
     "angular-plotly.js": "^1.5.0",
+    "@angular/compiler-cli": "~8.2.14",
     "bower": "^1.8.8",
     "chart.js": "^2.9.3",
     "chartist": "^0.11.4",
@@ -41,8 +44,8 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.803.25",
-    "@angular/cli": "^8.3.25",
-    "@angular/compiler-cli": "~8.2.14",
+    
+    
     "@angular/language-service": "~8.2.14",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
