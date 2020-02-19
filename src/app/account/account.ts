@@ -15,7 +15,7 @@ export class AccountPage {
                 window.alert("user already exhists use a better username or password")
             } else {
                 sessionStorage.setItem('username', res['username']);
-                window.location.href = '/src/home'
+                // window.location.href = '/src/home'
             }
         })
     }
