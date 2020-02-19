@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { BackendHook } from '../services/api.backendhook';
+import { Router } from '@angular/router';
 
 @Component({
     selector: "LoginPage",
     templateUrl:"./user.loginTemplate.html"
 })
 export class LoginPage {
-    constructor(private API: BackendHook){
+    constructor(private API: BackendHook, private router: Router){
     }
 
     loginUser(user){
@@ -15,7 +16,7 @@ export class LoginPage {
                 window.alert("incorrect username and password");
             } else {
                 sessionStorage.setItem('username', res['username']);
-                window.location.href = '/src/home';
+                this.router.navigate(['/src/home']);
             }
         })
     }
