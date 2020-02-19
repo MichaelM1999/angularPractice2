@@ -32,13 +32,14 @@ mongoose.connect(process.env.MONGOLAB_URI || DATABASE);
 //   }
 // )
 // Serve only the static files form the dist directory
+const distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
+// app.use(express.static(__dirname + '/ng-firstapp'));
 
-app.use(express.static(__dirname + '/ng-firstapp'));
-
-app.get('/*', function(req,res) {
+// app.get('/*', function(req,res) {
     
-res.sendFile(path.join(__dirname+'/dist/ng-firstapp/index.html'));
-});
+// res.sendFile(path.join(__dirname+'/dist/ng-firstapp/index.html'));
+// });
 
 //gets all followed stocks working
 router.route('/shares/find').post((req, res) => {
