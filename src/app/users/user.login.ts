@@ -16,7 +16,7 @@ export class LoginPage {
                 window.alert("incorrect username and password");
             } else {
                 sessionStorage.setItem('username', res['username']);
-                this.router.navigateByUrl('/home');
+                this.router.navigate(['/home']);
             }
         })
     }
