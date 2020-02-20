@@ -7,15 +7,13 @@ const routes = require("./routes");
 
 const Models = require('./models/index');
 
-var PORT = process.env.PORT;
+var PORT = process.env.PORT || 4202;
 const app = express()
 const router = express.Router();
 
 app.use(cors());
 app.use(bodyParser.json());
-app.use(express.urlencoded({
-  extended: true
-}));
+
 DATABASE = "mongodb://localhost/reactreadinglist";
 if(process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
@@ -30,7 +28,6 @@ if(process.env.MONGODB_URI) {
    }
   });
  }
-console.log(process.env.MONGODB_URI);
 // Serve only the static files form the dist directory
 const distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
@@ -108,7 +105,7 @@ router.route('/user/create').post((req, res) => {
   })
 })
 
-app.use('/', router);
+// app.use('/', router);
 
 app.listen(PORT, () => {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
