@@ -13,16 +13,21 @@ const router = express.Router();
 
 app.use(cors());
 app.use(bodyParser.json());
-MONGOLAB_URI='mongodb://heroku_rg05p2gw:infbsu6v0ljf2bsu8jjn1kvgd0@ds217438.mlab.com:17438/heroku_rg05p2gw'
 DATABASE = "mongodb://localhost/reactreadinglist";
-mongoose.connect(MONGOLAB_URI,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  function (error) {
-    if (error) console.error(error);
-    else console.log('mongo connected');
-}
-  );
-console.log(MONGOLAB_URI);
+if(process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+ 
+ }else {
+ 
+  mongoose.connect(DATABASE, function(err){ //db = 'mongodb://localhost/yourdb'
+   if(err){
+    console.log(err);
+   }else {
+    console.log('mongoose connection is successful on: ' + DATABASE);
+   }
+  });
+ }
+console.log(process.env.MONGODB_URI);
 // Serve only the static files form the dist directory
 const distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
