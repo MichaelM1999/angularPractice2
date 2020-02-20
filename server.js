@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 DATABASE = "mongodb://localhost/reactreadinglist";
 if(process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
- 
+  console.log("connected to mongolabs");
  }else {
  
   mongoose.connect(DATABASE, function(err){ db = 'mongodb://localhost/reactreadinglist'
