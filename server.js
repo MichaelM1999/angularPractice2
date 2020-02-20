@@ -7,23 +7,26 @@ const routes = require("./routes");
 
 const Models = require('./models/index');
 
-var PORT = process.env.PORT || 4202;
+var PORT = process.env.PORT;
 const app = express()
 const router = express.Router();
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 DATABASE = "mongodb://localhost/reactreadinglist";
 if(process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
  
  }else {
  
-  mongoose.connect(DATABASE, function(err){ //db = 'mongodb://localhost/yourdb'
+  mongoose.connect(DATABASE, function(err){ db = 'mongodb://localhost/reactreadinglist'
    if(err){
     console.log(err);
    }else {
-    console.log('mongoose connection is successful on: ' + DATABASE);
+    console.log('mongoose connection is successful on: ' + db);
    }
   });
  }
