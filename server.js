@@ -22,7 +22,7 @@ const distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
 /* final catch-all route to index.html defined last */
 app.get('/*', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + "/dist/"+'/index.html');
 })
 
 //gets all followed stocks working
