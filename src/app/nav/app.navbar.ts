@@ -13,7 +13,6 @@ export class Navbar implements OnInit {
     logout(){
         this.loggedUser = null
         sessionStorage.clear();
-        // window.location.href = '/src/login';
         sessionStorage.getItem('username');
     }
 }
