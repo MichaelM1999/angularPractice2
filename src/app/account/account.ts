@@ -10,6 +10,7 @@ export class AccountPage {
     constructor(private API: BackendHook){
     }
     createUser(user){
+        console.log(user);
         this.API.createUser(user).subscribe((res) =>{
             if(res['err']) {
                 window.alert("user already exhists use a better username or password")

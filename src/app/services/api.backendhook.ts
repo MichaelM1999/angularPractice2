@@ -14,21 +14,21 @@ export class BackendHook {
 }
 //takes user object
   createUser(user) {
-    return this.http.post('/user/create', user);
+    return this.http.post(`/user/create`, user);
   }
   loginUser(user) {
-    return this.http.post('/user/login', user);
+    return this.http.post(`/user/login`, user);
   }
   followStock(stock){
-    return this.http.post('/shares/follow', stock);
+    return this.http.post(`/shares/follow`, stock);
   }
   getFollowedStock(stock){
-    return this.http.post('/shares/find', stock);
+    return this.http.post(`/shares/find`, stock);
   }
   removeStock(stock){
-    return this.http.post('/shares/delete', stock);
+    return this.http.post(`/shares/delete`, stock);
   }
   testRoute(){
-    return this.http.get(`${this.uri}/foo`);
+    return this.http.get(`/foo`);
   }
 }

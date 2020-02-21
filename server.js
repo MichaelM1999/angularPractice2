@@ -105,7 +105,7 @@ router.route('/user/create').post((req, res) => {
   })
 })
 
-// app.use('/', router);
+app.use('/', router);
 
 app.listen(PORT, () => {
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
