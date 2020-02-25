@@ -128,12 +128,13 @@ input:focus {outline: 0;}
 }
   .appPic{
     float: left;
-    margin-left: 5%;
-    width: 20%;
+
+    width: 33%;
   }
   .contactBox {
       background-color: lightslategray;
       align-content: center;
+      text-align: center;
   }
   .contactBox::after{
     content: "";
