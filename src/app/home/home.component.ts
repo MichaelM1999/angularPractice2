@@ -47,6 +47,11 @@ export class HomeComponent implements OnInit{
         const reversePriceArry = []
         const reverseDateArry = []
         this.stockSearch.getStock(searchItem).subscribe((res)=> {
+            if (res["Error Message"]){
+                window.alert("Not a real stock name");
+            } else {
+
+            
             let dailyseries = res["Time Series (Daily)"]
 
             for (let key in dailyseries){
@@ -142,5 +147,6 @@ export class HomeComponent implements OnInit{
                         }}]}}
                         }) 
             }
+        }
     )}
 }
