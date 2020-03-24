@@ -323,3 +323,11 @@ input:focus {outline: 0;}
   .negative {
     color: red;
   }
+  .UseCase {
+    text-align: center;
+  }
+  .UseCaseBX {
+    width: 80%;
+    background-color: lightslategray;
+    margin-left: 10%;
+  }
