@@ -104,6 +104,7 @@ input:focus {outline: 0;}
   }
   .infoBox {
       background-color: lightslategray;
+      padding: 3px;
   }
   .graphBox {
       width: 33%;
@@ -330,4 +331,8 @@ input:focus {outline: 0;}
     width: 80%;
     background-color: lightslategray;
     margin-left: 10%;
+  }
+  .stockInfoBox {
+    margin-top: 3px;
+    margin-bottom: 3px;
   }

@@ -4,7 +4,6 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 var path = require('path');
 const routes = require("./routes");
-
 const Models = require('./models/index');
 
 var PORT = process.env.PORT || 4202;
@@ -14,6 +13,7 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
+//connect to database
 DATABASE = "mongodb://localhost/reactreadinglist";
 if(process.env.MONGODB_URI) {
   mongoose.connect(process.env.MONGODB_URI);
@@ -28,9 +28,11 @@ if(process.env.MONGODB_URI) {
    }
   });
  }
+
 // Serve only the static files form the dist directory
 const distDir = __dirname + "/dist/";
 app.use(express.static(distDir));
+
 /* final catch-all route to index.html defined last */
 app.get('/*', (req, res) => {
   res.sendFile(__dirname + "/dist/"+'/index.html');
