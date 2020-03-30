@@ -82,7 +82,6 @@ router.route('/shares/delete').post((req, res) =>{
 
 //logs user in working
 router.route('/user/login').post((req, res) => {
-    console.log(req.body, "gisia")
   Models.User.findOne({username: req.body.username}).then(data => {
     res.send(data);
     console.log("running user login route")
@@ -92,7 +91,6 @@ router.route('/user/login').post((req, res) => {
 
 //creates user working
 router.route('/user/create').post((req, res) => {
-  console.log(req.body, "helai")
   Models.User.exists({username: req.body.username}).then(data => {
     console.log(data)
     if (data === true) {

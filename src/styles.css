@@ -1,8 +1,8 @@
 html {
-    background-color: cadetblue;
+    background-color: white;
 }
 h1 {
-    color: white;
+    color: black;
     font-family: sans-serif;
     font-size: 40px;
 }
@@ -18,17 +18,17 @@ h1 {
 }
 .stockName {
     padding: 3px;
-    color: white;
+    color: black;
     font-family: sans-serif;
     margin-left: 25px;
 }
 .stocktxt {
     padding-bottom: 5px;
     margin-left: 10%;
-    color: white;
+    color: black;
 }
 .infoWrap {
-    background-color: cadetblue;
+    background-color: white;
     margin-left: 20px;
     width: 30%;
     padding: 1px;
@@ -48,8 +48,8 @@ h1 {
     border-radius: 5px;
 }
 .optbutton {
-    background-color: cadetblue;
-    color: white;
+    background-color: white;
+    color: black;
     width: 50%;
     height: 100%;
     border-radius: 5px;
@@ -100,7 +100,7 @@ input:focus {outline: 0;}
   }
   
     a.active {
-    background-color: cadetblue;
+    background-color: white;
   }
   .infoBox {
       background-color: lightslategray;
@@ -190,13 +190,13 @@ input:focus {outline: 0;}
     width: 90%;
     height: 50px;
     margin-left: 20px;
-    background-color: cadetblue;
+    background-color: white;
     border-width: 1px;
     border-style: solid;
-    border-color: white;
+    border-color: black;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: black;
   }
   .loginBTNS{
     position: relative;
@@ -226,13 +226,13 @@ input:focus {outline: 0;}
     width: 40%;
     margin-top: 75px;
     height: 30px;
-    background-color: cadetblue;
+    background-color: white;
     border-width: 1px;
     border-style: solid;
     border-color: white;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: black;
   }
   .searchbutton {
     height: 30px;
@@ -276,30 +276,30 @@ input:focus {outline: 0;}
     width: 40%;
     margin: 1%;
     height: 30px;
-    background-color: cadetblue;
+    background-color: white;
     border-width: 1px;
     border-style: solid;
     border-color: white;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
-    color: white;
+    color: black;
   }
   .searchbuttonA{
     margin-top: 10px;
     margin-left: 5px;
     height: 30px;
-    background: cadetblue;
+    background: lightskyblue;
     border: 1px solid white;
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
     cursor: pointer;
-    color: white;
+    color: black;
     transition: 0.8s;
     position: relative;
     overflow: hidden;
   }
   .searchbuttonA:hover{
-    color: cadetblue;
+    color: lightskyblue;
   }
   .searchbuttonA::before{
     content: "";
@@ -307,7 +307,7 @@ input:focus {outline: 0;}
     left: 0;
     width: 100%;
     height: 0%;
-    background: cadetblue;
+    background: white;
     z-index: -1;
     transition: 0.8s;
   }
@@ -319,7 +319,7 @@ input:focus {outline: 0;}
     height: 180%;
   }
   .positive {
-    color: cadetblue;
+    color: white;
   }
   .negative {
     color: red;
