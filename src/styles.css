@@ -101,6 +101,7 @@ input:focus {outline: 0;}
   
     a.active {
     background-color: white;
+    color: black;
   }
   .infoBox {
       background-color: lightslategray;
@@ -319,7 +320,7 @@ input:focus {outline: 0;}
     height: 180%;
   }
   .positive {
-    color: white;
+    color: lightgreen;
   }
   .negative {
     color: red;
